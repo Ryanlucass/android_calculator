@@ -7,7 +7,7 @@ import {Tweet} from "./components/Tweet"
   }
 
 function App() {
-  // tipando tweets
+  //tipando tweets
   //função para atualizar a lista de tweets  
   const [tweets, setTweets] = useState<string[]>([
     'Cada dia que surge, constitui uma nova vida para quem sabe viver',
@@ -22,13 +22,20 @@ function App() {
     setTweets([...tweets, frase]);
     setFrase('');
   }
+
+
   return(
     <div>  
 
       <h1>Lista de repositórios</h1>
       <ul>
-        <RepositoryItem  repository="Link App" />
-        <RepositoryItem  repository="Fin Conector app"/>
+        <RepositoryItem  />
+
+        <RepositoryItem  
+        repository="CodeWars"
+        description="Desafios referente ao site codewar" 
+        link="https://github.com/Ryanlucass/CodeWars"
+        />
         <RepositoryItem  repository="RyanLucas"/>
         <RepositoryItem />
         <RepositoryItem />

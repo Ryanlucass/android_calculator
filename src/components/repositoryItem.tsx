@@ -1,15 +1,16 @@
+
 type RepoProps = {
     repository?: string;
+    description?: string;
+    link?: string;
   }
 
-export function RepositoryItem({repository}: RepoProps){
+export function RepositoryItem(props: RepoProps){
     return (
     <li>
-        <strong>{repository}</strong>
-        <p> forms in react</p>
-        <a href="www.google.com.br">
-            Acessar o google 
-        </a>
+        <strong>{props.repository ?? 'Default'} </strong>
+        <p> {props.description ?? 'Default'}</p>
+        <a href={props.link ?? 'Default'}> </a>
     </li>
     );
 } 
