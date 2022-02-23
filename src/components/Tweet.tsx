@@ -3,11 +3,11 @@ type TweetProps = {
 }
 
 // erro, pois tenho que passar o tipo da props
-export function Tweet(props: TweetProps){
+export function Tweet({text}: TweetProps){
     return (
         <div>
-            <p>{props.text}</p>       
-        </div>
+            <p>{text}</p>  
+        </div>     
     );
        
 }

@@ -1,16 +1,64 @@
-//function App é um componente de React
-//ele é chamado na parte principal <App />
+import { useState } from "react";
+import { RepositoryItem } from "./components/repositoryItem";
 import {Tweet} from "./components/Tweet"
 
+  type FrasProps = {
+    text: string;
+  }
 
 function App() {
+  // tipando tweets
+  //função para atualizar a lista de tweets  
+  const [tweets, setTweets] = useState<string[]>([
+    'Cada dia que surge, constitui uma nova vida para quem sabe viver',
+    'A vida ta na mão de Deus, mas a morte ta na caçamba do motorzinho',
+    'Muito é dado, muito séra cobrado'
+  ])
+
+
+  const [frase, setFrase] = useState('');
+
+  function CreateFrase(){
+    setTweets([...tweets, frase]);
+    setFrase('');
+  }
   return(
-    <div>
-      <Tweet text="A vida ta na mão de Deus, mas a morte ta na caçambda do motorzinho"/>
-      <Tweet text="Melhor um passaro na mão, do que um gato morto" />
-      <Tweet text="Aplica a macacada"/>
-      <Tweet text="Só as cachorra"/>
-      <Tweet />
+    <div>  
+
+      <h1>Lista de repositórios</h1>
+      <ul>
+        <RepositoryItem  repository="Link App" />
+        <RepositoryItem  repository="Fin Conector app"/>
+        <RepositoryItem  repository="RyanLucas"/>
+        <RepositoryItem />
+        <RepositoryItem />
+      </ul>
+        
+      {/* Concatenando na minha lista */}
+
+      {
+        tweets.map(frase=> {
+          return <Tweet key={frase} text={frase}/>
+        })
+
+      }
+
+      <div>
+        <p> 
+          <label>Sua Frase </label>
+          <strong>{frase}</strong>
+
+            <input
+            value={frase} 
+            required
+            type="text" 
+            placeholder="a volta do mal"
+            onChange={event => setFrase(event.target.value)}
+            />
+          <button onClick={CreateFrase}  >Adicionar Frase</button>    
+        </p>
+      </div>
+        
     </div>
   );
 }
