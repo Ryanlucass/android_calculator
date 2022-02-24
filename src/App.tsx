@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RepositoryItem } from "./components/repositoryItem";
+import { RepositoryItem, RepoProps } from "./components/repositoryItem";
 import {Tweet} from "./components/Tweet"
 
   type FrasProps = {
@@ -23,22 +23,29 @@ function App() {
     setFrase('');
   }
 
+  const Repository : RepoProps = {
+    obj:{
+      repository : 'teste',
+      description : 'nome descrição',
+      link : 'çinad'
+    }
+  }
 
   return(
     <div>  
 
       <h1>Lista de repositórios</h1>
       <ul>
-        <RepositoryItem  />
+        <RepositoryItem  obj={Repository.obj}/>
 
-        <RepositoryItem  
+        {/* <RepositoryItem  
         repository="CodeWars"
         description="Desafios referente ao site codewar" 
         link="https://github.com/Ryanlucass/CodeWars"
         />
         <RepositoryItem  repository="RyanLucas"/>
         <RepositoryItem />
-        <RepositoryItem />
+        <RepositoryItem /> */}
       </ul>
         
       {/* Concatenando na minha lista */}

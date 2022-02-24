@@ -1,16 +1,19 @@
 
-type RepoProps = {
-    repository?: string;
-    description?: string;
-    link?: string;
+
+export type RepoProps = {
+    obj:{
+        repository: string;
+        description: string;
+        link: string;
+    }
   }
 
-export function RepositoryItem(props: RepoProps){
+export function RepositoryItem({obj}: RepoProps){
     return (
     <li>
-        <strong>{props.repository ?? 'Default'} </strong>
-        <p> {props.description ?? 'Default'}</p>
-        <a href={props.link ?? 'Default'}> </a>
+        <strong>{obj.repository ?? 'Default'} </strong>
+        <p> {obj.description ?? 'Default'}</p>
+        <a href={obj.link ?? 'Default'}> {obj.repository} </a>
     </li>
     );
 } 
