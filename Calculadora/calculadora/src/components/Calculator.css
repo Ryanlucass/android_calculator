@@ -1,0 +1,62 @@
+.wrapper{
+    border-radius: 1rem;
+    background-color:  #3C4043;   
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 16em;
+    padding: 0.5em;
+
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+    margin: 0.2em;
+    
+    width: 3em;
+    height: 2.6em;
+    border-radius: 2.5rem;
+    
+    /* font color {config} */
+    color: white;
+    /* background-color: ##d3d7d7; */
+    background-color: #575b5f;
+
+}
+
+/* Botão AC */
+.wrapper div:nth-child(2){
+    background-color: rgb(29, 136, 29);
+}
+/* Botão = */
+.wrapper div:nth-child(21){
+    background-color:rgb(55, 46, 227)
+}
+
+.button.dif{
+    background-color: rgb(16, 107, 212);
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+   width: 14em;
+   height: 10rem;
+
+   border-bottom-left-radius: 1rem;
+   border-bottom-right-radius: 1rem;
+
+
+   margin-bottom: 1rem;
+   background-color: #80868B;
+}
+
+
