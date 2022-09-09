@@ -48,15 +48,24 @@
 
 .container{
     display: flex;
-   width: 14em;
-   height: 10rem;
+    width: 14em;
+    height: 14rem;
 
-   border-bottom-left-radius: 1rem;
-   border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 
 
-   margin-bottom: 1rem;
-   background-color: #80868B;
+    margin-bottom: 1rem;
+    background-color: #80868B;
+
+
+    align-items: flex-end;    
+}
+.container .result{
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2em;
 }
 
 
